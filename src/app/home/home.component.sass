@@ -1,0 +1,84 @@
+$colorTop: #6f0000
+$colorBottom: #200122
+$colorHeader: #fafaff
+$colorButton: #1e2749
+$colorText: #000000
+$colorSecondaryText: #ffffff
+
+.container-home
+  padding: 2
+  height: 100vh
+
+  background: $colorBottom
+  background: -webkit-linear-gradient(to right, $colorTop,$colorBottom)
+  background: linear-gradient(to right,$colorTop,$colorBottom)
+
+  main
+    position: fixed
+    width: 79.9rem
+    padding: .9rem
+
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+
+    background: $colorHeader
+
+  h2
+    font-size: 2rem
+
+  button
+    height: 2.3rem
+    padding: .2rem
+    border-radius: .5rem
+
+    border: none
+    text-align: center
+    color: $colorText
+    font-size: 1.2rem
+    background-color: transparent
+    &:hover
+      cursor: pointer
+      text-decoration: underline
+
+  section
+    display: flex
+    align-items: center
+    flex-direction: column
+    padding-top: 3rem
+    height: 100vh
+    overflow-x: auto
+
+    .card
+      width: 25rem
+      height: 10rem
+      margin: 2rem
+      padding: 1rem
+      border-radius: 2rem
+      border: none
+      background-color: blue
+
+      h3
+        color: $colorSecondaryText
+        font-weight: bold
+        text-align: center
+        font-size: 1.5rem
+
+      .bank-info
+        padding: 1rem
+
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+
+        strong
+          color: $colorText
+          font-weight: bold
+          text-align: center
+          font-size: 1.3rem
+
+        span
+          color: $colorText
+          text-align: center
+          font-size: 1rem
