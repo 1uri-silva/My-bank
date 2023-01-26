@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { BankService } from '../services/api.service';
 
 interface Banks {
@@ -18,7 +20,7 @@ export class ChooseBankComponent implements OnInit {
   code: number | null = null;
   bank: Banks | null = null;
 
-  constructor(private allBank: BankService) {
+  constructor(private allBank: BankService, private router: Router) {
     this.getAllBank();
   }
 
@@ -32,5 +34,11 @@ export class ChooseBankComponent implements OnInit {
     this.allBank
       .getBankByCode(Number(code))
       .subscribe((bank) => (this.bank = bank));
+  }
+
+  navigateToCreateAccount(bank: Banks): void {
+    this.router.navigateByUrl('/create-account', {
+      state: { bank },
+    });
   }
 }

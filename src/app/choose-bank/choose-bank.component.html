@@ -15,27 +15,27 @@
 
   <section>
     <div *ngIf="bank; else listBanks">
-      <div class="cards-bank" routerLink="/create-account">
+      <div class="cards-bank" (click)="navigateToCreateAccount(bank)">
         <h3>{{bank.name}}</h3>
         <strong>Nome completo</strong>
         <span>{{bank.fullName}}</span>
         <div class="content-code-bank">
           <strong>Código</strong>
           <span *ngIf="bank.code; else notFound">{{bank.code}}</span>
-          <ng-template #notFound><span>Não tem código</span></ng-template>
+          <ng-template #notFound><span>Não foi informado</span></ng-template>
         </div>
       </div>
     </div>
 
     <ng-template #listBanks>
-      <div *ngFor="let bank of banks" class="cards-bank" routerLink="/create-account">
+      <div *ngFor="let bank of banks" class="cards-bank" (click)="navigateToCreateAccount(bank)">
         <h3>{{bank.name}}</h3>
         <strong>Nome completo</strong>
         <span>{{bank.fullName}}</span>
         <div class="content-code-bank">
           <strong>Código</strong>
           <span *ngIf="bank.code; else notFound">{{bank.code}}</span>
-          <ng-template #notFound><span>Não tem código</span></ng-template>
+          <ng-template #notFound><span>Não foi informado</span></ng-template>
         </div>
       </div>
     </ng-template>

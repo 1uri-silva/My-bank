@@ -1,12 +1,13 @@
 <div class="container-account">
+  <ng-template #notFound><span>Não foi informado</span></ng-template>
   <main>
-    <section>
+    <section >
       <div>
         <strong>
           ispb:
         </strong>
-        <span>
-          00000000
+        <span *ngIf="bank?.ispb; else notFound">
+          {{bank?.ispb}}
         </span>
       </div>
 
@@ -14,8 +15,8 @@
         <strong>
           name:
         </strong>
-        <span>
-          BCO DO BRASIL S.A.
+        <span *ngIf="bank?.name; else notFound">
+          {{bank?.name}}
         </span>
       </div>
 
@@ -23,8 +24,8 @@
         <strong>
           fullName:
         </strong>
-        <span>
-          Banco do Brasil S.A.
+        <span  *ngIf="bank?.fullName; else notFound">
+          {{bank?.fullName}}
         </span>
       </div>
 
@@ -32,8 +33,8 @@
       <strong>
         code:
       </strong>
-      <span>
-        1
+      <span   *ngIf="bank?.code; else notFound">
+        {{bank?.code}}
       </span>
     </div>
     </section>
@@ -43,7 +44,7 @@
         <input type="number" placeholder="Número da conta">
         <input type="number" placeholder="Agência">
       </div>
-      <button>Criar conta</button>
+      <button (click)="saveData()">Criar conta</button>
     </section>
   </main>
 </div>

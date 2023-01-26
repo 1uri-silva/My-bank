@@ -25,4 +25,5 @@ export class BankService {
   getBankByCode(code: number): Observable<Banks> {
     return this.http.get<Banks>(this.url + `/${code}`);
   }
+
 }
