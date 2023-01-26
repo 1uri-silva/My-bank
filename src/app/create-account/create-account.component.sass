@@ -1,0 +1,92 @@
+$colorTop: #6f0000
+$colorBottom: #200122
+$colorHeader: #fafaff
+$colorButton: #1e2749
+$colorText: #000000
+$colorSecondaryText: #ffffff
+
+.container-account
+  padding: 2
+  height: 100vh
+
+  background: $colorBottom
+  background: -webkit-linear-gradient(to right, $colorTop,$colorBottom)
+  background: linear-gradient(to right,$colorTop,$colorBottom)
+
+  main
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    section:nth-child(1)
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      width: 40rem
+      height: 20rem
+
+      div
+        display: flex
+        flex-direction: row
+        width: 30rem
+        justify-content: space-between
+        color: $colorSecondaryText
+
+        strong
+          font-size: 1.2rem
+          margin: 1rem
+
+        span
+          font-size: 1.2rem
+          margin: 1rem
+
+    section:nth-child(2)
+      display: flex
+      flex-direction: column
+      align-items: center
+      width: 40rem
+
+      .content-account
+        display: flex
+        flex-direction: row
+        width: 40rem
+        justify-content: center
+
+        input:nth-child(1)
+          width: 15rem
+          height: 2rem
+          border: none
+          border-radius: .3rem
+          padding: 1rem
+          margin: 1rem
+          font-size: .9rem
+
+        input:nth-child(2)
+          width: 7rem
+          height: 2rem
+          border: none
+          border-radius: .3rem
+          padding: 1rem
+          margin: 1rem
+          font-size: .9rem
+
+        input[type=number]::-webkit-inner-spin-button
+          -webkit-appearance: none
+
+        input[type=number]
+          -moz-appearance: textfield
+          appearance: textfield
+
+      button
+        width: 20rem
+        height: 2rem
+        border: none
+        border-radius: .2rem
+        font-size: 1.3rem
+
+        &:hover
+          cursor: pointer
+          background-color: green
