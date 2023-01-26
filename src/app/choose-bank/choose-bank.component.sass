@@ -21,25 +21,37 @@ $colorSecondaryText: #ffffff
   h2
     font-size: 2rem
 
-  input
-    width: 15rem
-    height: 2rem
-    padding: .5rem
-    border-radius: .5rem
+  div
+    display: flex
+    flex-direction: row
+    justify-content: space-between
 
-    border: .1rem solid $colorText
-    color: $colorText
-    font-size: 1.2rem
-    background-color: transparent
-    &:hover
-      cursor: text
+    input
+      width: 15rem
+      height: 2rem
+      padding: .5rem
+      border-radius: .5rem
 
-  input[type=number]::-webkit-inner-spin-button
-    -webkit-appearance: none
+      border: .1rem solid $colorText
+      color: $colorText
+      font-size: 1.2rem
+      background-color: transparent
+      &:hover
+        cursor: text
 
-  input[type=number]
-    -moz-appearance: textfield
-    appearance: textfield
+    input[type=number]::-webkit-inner-spin-button
+      -webkit-appearance: none
+
+    input[type=number]
+      -moz-appearance: textfield
+      appearance: textfield
+
+    button
+      border: none
+      border-radius: .7rem
+      background-image: transparent
+      &:hover
+        cursor: pointer
 
   section
     display: grid

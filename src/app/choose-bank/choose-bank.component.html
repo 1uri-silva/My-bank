@@ -2,20 +2,42 @@
   <main>
     <h2>My Bank</h2>
     <div>
-      <input type="number" placeholder="Digite o código do banco">
+      <input
+        type="number"
+        placeholder="Digite o código do banco"
+        #code
+      />
+      <button (click)="getBankByCode(code.value)">
+        <mat-icon>search</mat-icon>
+      </button>
     </div>
   </main>
 
   <section>
-    <div *ngFor="let bank of banks" class="cards-bank" routerLink="/create-account">
-      <h3>{{bank.name}}</h3>
-      <strong>Nome completo</strong>
-      <span>{{bank.fullName}}</span>
-      <div class="content-code-bank">
-        <strong>Código</strong>
-        <span *ngIf="bank.code; else notFound">{{bank.code}}</span>
-        <ng-template #notFound><span>Não tem código</span></ng-template>
+    <div *ngIf="bank; else listBanks">
+      <div class="cards-bank" routerLink="/create-account">
+        <h3>{{bank.name}}</h3>
+        <strong>Nome completo</strong>
+        <span>{{bank.fullName}}</span>
+        <div class="content-code-bank">
+          <strong>Código</strong>
+          <span *ngIf="bank.code; else notFound">{{bank.code}}</span>
+          <ng-template #notFound><span>Não tem código</span></ng-template>
+        </div>
       </div>
     </div>
+
+    <ng-template #listBanks>
+      <div *ngFor="let bank of banks" class="cards-bank" routerLink="/create-account">
+        <h3>{{bank.name}}</h3>
+        <strong>Nome completo</strong>
+        <span>{{bank.fullName}}</span>
+        <div class="content-code-bank">
+          <strong>Código</strong>
+          <span *ngIf="bank.code; else notFound">{{bank.code}}</span>
+          <ng-template #notFound><span>Não tem código</span></ng-template>
+        </div>
+      </div>
+    </ng-template>
   </section>
 </div>

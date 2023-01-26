@@ -21,4 +21,8 @@ export class BankService {
   getAllBank(): Observable<Banks[]> {
     return this.http.get<Banks[]>(this.url);
   }
+
+  getBankByCode(code: number): Observable<Banks> {
+    return this.http.get<Banks>(this.url + `/${code}`);
+  }
 }

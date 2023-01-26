@@ -15,6 +15,8 @@ interface Banks {
 })
 export class ChooseBankComponent implements OnInit {
   banks: Banks[] = [];
+  code: number | null = null;
+  bank: Banks | null = null;
 
   constructor(private allBank: BankService) {
     this.getAllBank();
@@ -24,5 +26,11 @@ export class ChooseBankComponent implements OnInit {
 
   getAllBank(): void {
     this.allBank.getAllBank().subscribe((bank) => (this.banks = bank));
+  }
+
+  getBankByCode(code: string): void {
+    this.allBank
+      .getBankByCode(Number(code))
+      .subscribe((bank) => (this.bank = bank));
   }
 }
