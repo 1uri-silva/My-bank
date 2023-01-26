@@ -7,51 +7,15 @@
   </main>
 
   <section>
-    <div class="cards-bank" routerLink="/create-account">
-      <h3>Nome do banco</h3>
+    <div *ngFor="let bank of banks" class="cards-bank" routerLink="/create-account">
+      <h3>{{bank.name}}</h3>
       <strong>Nome completo</strong>
-      <span>CONF NAC COOP CENTRAIS UNICRED</span>
+      <span>{{bank.fullName}}</span>
       <div class="content-code-bank">
         <strong>Código</strong>
-        <span>70</span>
+        <span *ngIf="bank.code; else notFound">{{bank.code}}</span>
+        <ng-template #notFound><span>Não tem código</span></ng-template>
       </div>
     </div>
-    <div class="cards-bank">
-      <h3>Nome do banco</h3>
-      <strong>Nome completo</strong>
-      <span>CONF NAC COOP CENTRAIS UNICRED</span>
-      <div class="content-code-bank">
-        <strong>Código</strong>
-        <span>70</span>
-      </div>
-    </div>
-    <div class="cards-bank">
-      <h3>Nome do banco</h3>
-      <strong>Nome completo</strong>
-      <span>CONF NAC COOP CENTRAIS UNICRED</span>
-      <div class="content-code-bank">
-        <strong>Código</strong>
-        <span>70</span>
-      </div>
-    </div>
-    <div class="cards-bank">
-      <h3>Nome do banco</h3>
-      <strong>Nome completo</strong>
-      <span>CONF NAC COOP CENTRAIS UNICRED</span>
-      <div class="content-code-bank">
-        <strong>Código</strong>
-        <span>70</span>
-      </div>
-    </div>
-    <div class="cards-bank">
-      <h3>Nome do banco</h3>
-      <strong>Nome completo</strong>
-      <span>CONF NAC COOP CENTRAIS UNICRED</span>
-      <div class="content-code-bank">
-        <strong>Código</strong>
-        <span>70</span>
-      </div>
-    </div>
-
   </section>
 </div>

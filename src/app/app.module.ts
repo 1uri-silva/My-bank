@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -15,8 +17,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     ChooseBankComponent,
     CreateAccountComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, MatIconModule, HttpClientModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

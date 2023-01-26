@@ -52,8 +52,8 @@ $colorSecondaryText: #ffffff
 
     .cards-bank
       background-color: white
-      width: 15rem
-      height: 10rem
+      width: 17rem
+      height: 12rem
       margin: 1rem
       padding: 1rem
       border-radius: 2rem
@@ -62,22 +62,28 @@ $colorSecondaryText: #ffffff
       display: flex
       flex-direction: column
 
+      &:hover
+        cursor: pointer
+
       h3
         font-size: 1.3rem
         text-align: center
         font-weight: bold
 
-      strong
-        font-size: 1rem
-        font-weight: bold
-        margin-top: .5rem
-        margin-bottom: .5rem
-
-      span
-        font-size: 1rem
-        text-align: left
-
       .content-code-bank
         display: flex
         flex-direction: row
         justify-content: space-around
+        align-items: center
+        margin-top: .7rem
+
+        strong
+          font-size: 1rem
+          font-weight: bold
+          margin-top: .5rem
+          margin-bottom: .5rem
+
+        span
+          font-size: 1rem
+          text-align: left
+
