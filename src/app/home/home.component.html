@@ -1,4 +1,5 @@
 <div class="container-home">
+  <ng-template #notFound>Valor não definido</ng-template>
   <main>
     <h2>My Bank</h2>
     <button routerLink="/choose-bank">
@@ -7,20 +8,22 @@
   </main>
 
   <section>
-    <div class="card">
-      <h3>Nome da pessoa</h3>
-      <div class="bank-info">
-        <strong>Banco: </strong>
-        <span>BCO DO BRASIL S.A.</span>
-      </div>
+    <div class="not-found" *ngIf="users.length <=0; else userFounded">
+      <strong>Nenhum conta cadastrada</strong>
     </div>
-    <div class="card">
-      <h3>Nome da pessoa</h3>
-      <div class="bank-info">
-        <strong>Banco: </strong>
-        <span>BCO DO BRASIL S.A.</span>
+    <ng-template #userFounded>
+      <div *ngFor="let user of users" class="card">
+        <h3 *ngIf="user.account; else notFound">{{user.account}}</h3>
+        <div class="bank-info">
+          <strong>Código </strong>
+          <span *ngIf="user.code; else notFound">{{user.code}}</span>
+        </div>
+        <div class="bank-info">
+          <strong *ngIf="user.agency; else notFound">Agência</strong>
+          <span>{{user.agency}}</span>
+        </div>
       </div>
-    </div>
+    </ng-template>
 
   </section>
 </div>

@@ -33,7 +33,7 @@
       <strong>
         code:
       </strong>
-      <span   *ngIf="bank?.code; else notFound">
+      <span *ngIf="bank?.code; else notFound">
         {{bank?.code}}
       </span>
     </div>
@@ -41,10 +41,18 @@
 
     <section>
       <div class="content-account">
-        <input type="number" placeholder="Número da conta">
-        <input type="number" placeholder="Agência">
+        <input
+          type="number"
+          placeholder="Número da conta"
+          #account
+        />
+        <input
+          type="number"
+          placeholder="Agência"
+          #agency
+        />
       </div>
-      <button (click)="saveData()">Criar conta</button>
+      <button (click)="saveData(agency.value, account.value, bank?.code)">Criar conta</button>
     </section>
   </main>
 </div>
